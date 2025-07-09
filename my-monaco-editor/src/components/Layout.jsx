@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import Terminal from './Terminal';
 import Editor from './Editor';
 import StatusBar from './StatusBar';
-import ChatWindow from './ChatWindow.jsx'; // <-- Standardized name
+import ChatWindow from './Chatwindow.jsx'; // <-- Standardized name
 import { useUIStore } from '../store/uiStore';
 
 const Layout = () => {
