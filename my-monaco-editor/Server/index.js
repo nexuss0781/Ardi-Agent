@@ -7,7 +7,7 @@ const app = express();
 const wsInstance = expressWs(app);
 
 const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.ws('/terminal', (ws, req) => {
   const term = pty.spawn(shell, [], {
