@@ -1,6 +1,6 @@
 import React from 'react';
 import { Maximize, Minimize } from 'lucide-react';
-import { useUIStore } from '../store/uiStore';
+import { useUIStore } from '../../store/uiStore';
 
 const ChatWindow = ({ isFullScreen = false }) => {
     const toggleChatFullScreen = useUIStore((state) => state.toggleChatFullScreen);
