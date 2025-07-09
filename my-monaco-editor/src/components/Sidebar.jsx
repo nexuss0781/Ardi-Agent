@@ -2,7 +2,8 @@ import React from 'react';
 import { FolderTree, MessageSquare } from 'lucide-react';
 import { useUIStore } from '../store/uiStore';
 import FileTree from './FileTree/FileTree.jsx';
-import ChatWindow from './ChatWindow.jsx'; // <-- Standardized name
+import ChatWindow from './FileTree/ChatWindow.jsx';
+
 
 const Sidebar = () => {
   const { sidebarView, setSidebarView } = useUIStore((state) => ({
@@ -39,6 +40,8 @@ const Sidebar = () => {
       )}
       
       {sidebarView === 'chat' && <ChatWindow />}
+      
+      
     </aside>
   );
 };
