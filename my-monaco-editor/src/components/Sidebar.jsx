@@ -1,7 +1,7 @@
 import React from 'react';
 import { FolderTree, MessageSquare } from 'lucide-react';
 import { useUIStore } from '../store/uiStore';
-import FileTree from './FileTree/FileTree';
+import FileTree from './FileTree/FileTree.jsx';
 import ChatWindow from './ChatWindow.jsx'; // <-- Standardized name
 
 const Sidebar = () => {
