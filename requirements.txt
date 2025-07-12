@@ -1,0 +1,31 @@
+# Core dependencies for the agent framework
+langchain
+langgraph
+
+# Dependency for managing the full LLM portfolio
+litellm
+
+# Dependency for loading secrets from the .env file
+python-dotenv
+
+# Specific provider SDKs that may be useful
+langchain-google-genai
+langchain-openai
+langchain-cohere
+langchain-groq
+PyYAML
+# Add these for Phase 2 tools
+langchain-community
+duckduckgo-search
+langchain-core
+# Add this for Phase 3 Docker interaction
+docker
+# Add these for Phase 3 API server
+fastapi
+uvicorn[standard]
+python-multipart
+# Add these for Phase A - RAG System
+chromadb
+sentence-transformers
+# Add this for intelligent code chunking
+langchain_text_splitters

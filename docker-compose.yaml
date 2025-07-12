@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the host's workspace and logs directories into the container
+      # This ensures that files created by the agent persist between runs.
+      - ./workspace:/app/workspace
+      - ./logs:/app/logs
+      # Mount the Docker socket to allow the agent to use Docker for its sandbox
+      # This has security implications and assumes the host's Docker daemon is trusted.
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env
+    # Restart policy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - "3000:80"
+    # This ensures the backend is started before the frontend
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  workspace_data:
+  log_data:
